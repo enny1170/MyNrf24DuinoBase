@@ -1,7 +1,7 @@
 # MyNrf24DuinoBase
 Project Template for a MySensors Node based on NRF24Duino from Electrodragon
 
-This is a Arduino Pro mini clone with a NRF12L01 and a Flash-Memory on board.
+This is a Arduino Pro mini clone with a NRF24L01 and a Flash-Memory on board.
 
 see https://www.electrodragon.com/w/NRF24L01
 
