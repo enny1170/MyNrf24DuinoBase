@@ -130,7 +130,9 @@ FEATURE_HOOKING             | OFF     | allow custom code to be hooked in the ou
 #define SKETCH_NAME "NodeManager"
 #define SKETCH_VERSION "1.7"
 //#define MY_DEBUG
-#define MY_NODE_ID 200
+#define MY_NODE_ID 201
+// for NRF24DUINO you have to specify a different CE-Pin for NRF24L01+
+#define MY_RF24_CE_PIN 7
 
 // NRF24 radio settings
 #define MY_RADIO_NRF24
@@ -188,7 +190,7 @@ FEATURE_HOOKING             | OFF     | allow custom code to be hooked in the ou
 //#define MY_SMART_SLEEP_WAIT_DURATION_MS 500
 #define MY_SPLASH_SCREEN_DISABLED
 //#define MY_DISABLE_RAM_ROUTING_TABLE_FEATURE
-//#define MY_SIGNAL_REPORT_ENABLED
+#define MY_SIGNAL_REPORT_ENABLED
 
 // Optimizations when running on 2032 Coin Cell. Also set node.setSleepBetweenSend(500) and run the board at 1Mhz
 //#define MY_TRANSPORT_UPLINK_CHECK_DISABLED
@@ -202,7 +204,7 @@ FEATURE_HOOKING             | OFF     | allow custom code to be hooked in the ou
  */
  
 // Common gateway settings
-//#define MY_REPEATER_FEATURE
+#define MY_REPEATER_FEATURE
 
 // Serial gateway settings
 //#define MY_GATEWAY_SERIAL
@@ -250,7 +252,7 @@ FEATURE_HOOKING             | OFF     | allow custom code to be hooked in the ou
 
 //#define USE_BATTERY
 #define USE_SIGNAL
-//#define USE_CONFIGURATION
+#define USE_CONFIGURATION
 //#define USE_ANALOG_INPUT
 //#define USE_THERMISTOR
 //#define USE_ML8511
@@ -318,8 +320,8 @@ NodeManager node;
 
 // built-in sensors
 //SensorBattery battery(node);
-//SensorConfiguration configuration(node);
-//SensorSignal signal(node);
+SensorConfiguration configuration(node);
+SensorSignal signal(node);
 //PowerManager power(5,6);
 
 // Attached sensors
